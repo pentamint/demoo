@@ -1,0 +1,121 @@
+.et_pb_gutters3 .et_pb_column_1_2, .et_pb_gutters3.et_pb_row .et_pb_column_1_2{
+    width: calc(50% - 10px);
+}
+.et_pb_gutters3 .et_pb_column, .et_pb_gutters3.et_pb_row .et_pb_column{
+margin-right: 20px;
+}
+
+/* 기본 footer 없애기 */
+#main-footer{
+display:none;
+}
+
+.et_header_style_centered #logo{
+margin-top:40px;
+}
+
+#main-title{
+    font-family: helvetica-neue;
+    font-size: 46px;
+    line-height: 1.2em;
+    color: #000000;
+    font-weight: 900;
+    bottom: 17%;
+    position: absolute;
+    left: -21.3%;
+}
+
+.et_pb_row{
+  width: 72%;
+  padding:0px;
+}
+
+#et_mobile_nav_menu{
+display:none !important;
+}
+
+.et_pb_column{
+margin-bottom:0px;
+}
+
+#constructor-pc-A{
+    position: fixed;
+    top: 49%;
+    left: 50%;
+    width: 52%;
+    background: #000;
+    color: white;
+    font-family: helvetica-neue;
+    font-size: 50px;
+    height: 78px;
+    line-height: 78px;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+#constructor-Mo-A{
+    width: 87%;
+    position: fixed;
+    top: 49%;
+    left: 50%;
+    background: #000;
+    color: white;
+    font-family: helvetica-neue;
+    font-size: 29px;
+    height: 40px;
+    line-height: 49px;
+    transform: translate(-50%);
+    text-align: center;
+    transition-duration:0.5s;
+}
+.et_pb_row.et_pb_row_1{
+    height: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+#main_all_box{
+  text-align: center;
+  line-height: calc(100vh - 288px);
+}
+
+#main_wrap_box{
+  display: inline-block;
+  vertical-align: middle;
+}
+@media (min-width: 1921px){
+    .et_pb_row{
+        max-width:70%;
+    }
+    .et_pb_image img{
+        min-height:700px;
+    }
+}
+
+@media (max-width: 1600px) and (min-width: 981px){
+    #constructor-pc-A{
+        width:58.5%;
+        font-size: 30px;
+        height: 45px;
+        line-height: 45px;
+    }
+}
+@media (max-width: 600px){
+    .et_header_style_centered #logo{
+        margin-top:0px;
+    }
+    #main-title{
+        font-size:35px;
+        left:-23.5%;
+    }
+    #constructor-Mo-A{
+        font-size:18px;
+        height: 35px;
+        line-height:42px;
+    }
+}
+@media (max-width:370px){
+    #constructor-Mo-A{
+        font-size:15.5px;
+    }
+}
