@@ -84,7 +84,7 @@ body::-webkit-scrollbar{
   border:0;
 }
 
-/*--- header ---*/
+/* ========= header ========== */
 #top-menu li li{
   padding: 0;
   width: 100%;
@@ -94,7 +94,9 @@ body::-webkit-scrollbar{
   padding: 6px 0 6px 10px;
   margin-left: 30px;
 }
-
+#top-menu #menu-item-207053 { /* main nav last menu item remove padding right */
+  padding-right: 0;
+}
 /* main menu setting */
 .et_header_style_centered #main-header div#et-top-navigation{
   font-family: helvetica-neue;
@@ -104,7 +106,6 @@ body::-webkit-scrollbar{
   font-size: 16px;
   line-height: 1.2rem;
 }
-
 /* /main menu setting */
 
 /* 로고 마진 */
@@ -134,12 +135,12 @@ display:none !important;
 #top-menu li{
   padding: 3px 22px 10px 0;
 }
-#top-menu li:nth-child(4), #top-menu li:last-child{
+#top-menu #menu-item-207052, #top-menu .wpml-ls-menu-item{
   position: absolute;
   right: 0px;
   bottom: 5rem;
 }
-#top-menu li:nth-child(4){ /* cafemoo nav menu */
+#top-menu #menu-item-207052{ /* cafemoo nav menu */
   left: 0rem;
   right: auto;
   background-image: url(/pmdemoo/wp-content/uploads/2018/09/cafemoo_logo.svg);
@@ -147,17 +148,17 @@ display:none !important;
   background-position: 0 7px;
   padding-right: 0;
 }
-#top-menu li:nth-child(4) a { /* cafemoo nav menu a */
+#top-menu #menu-item-207052 a { /* cafemoo nav menu a */
   color: transparent;
   width: 100px;
 }
-#top-menu li:nth-child(4) a, #top-menu li:last-child a{
+#top-menu #menu-item-207052 a, #top-menu .wpml-ls-menu-item a{
   font-size: 15px;
   font-weight: 100;
 }
 
 /* /tablet 이하 submenu 보이기 */
-/*--- /header ---*/
+/* ========= header end ========== */
 /*--- footer ---*/
 /* 기본 footer 없애기 */
 #main-footer{
@@ -948,6 +949,19 @@ div.owl-nav.arrow_size_medium .owl-next:before{
 }
 /* ver 4 Mabile */
 @media (max-width: 600px){
+  /* ========= header ========== */
+  #top-menu #menu-item-207052 { /* cafemoo menu item size */
+    width: 75px;
+  }
+  .et_header_style_centered #logo { /* demoo logo resized */
+    max-height: 30px;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  .et_header_style_centered #top-menu > li > a { /* main nav menu item size */
+    font-size: 12px;
+  }
+    /* ========= header end ========== */
   .wpml-ls-menu-item .wpml-ls-flag{
     vertical-align: top;
   }
@@ -994,13 +1008,10 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   #stockist-section .info-text{
     font-size: 14px;
   }
-
-
   /* header 간격 조절 */
   #top-menu li li{
     width: 100%;
   }
-
   #collections-menu{
     padding: 10px;
   }
@@ -1010,22 +1021,14 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   #main-header{
     margin-top: 1rem;
   }
-  .et_header_style_centered #top-menu>li>a{
-    font-size: 16px;
-  }
-  .et_header_style_centered #logo{
-    max-height: 40px;
-    margin-bottom: 10px;
-    margin-top: 0;
-  }
   #menu-collection-menu li,
   #menu-collection-menu-ko li{
     font-size:1.4rem;
     margin:5px 10px;
   }
-  #main-title{
+  #main-title{ /* main page season title */
       font-size:15px;
-      left:-9.5%;
+      left:-5%;
       bottom: 20%;
   }
   #main_all_box{
@@ -1174,21 +1177,16 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   #contact-div p{
     margin-bottom: 5px;
   }
-  #top-menu li:nth-child(4) a,
-  #top-menu li:nth-child(5) a,
-  #top-menu li:last-child a{
-    font-size: 10px;
-  }
-  #top-menu li:nth-child(4){
+  #top-menu #menu-item-207052{
     left: calc(-30px + 0.35rem);
   }
-  #top-menu li:nth-child(5){
+  #top-menu #menu-item-207053{
     right: -0.35rem;
   }
-  #top-menu li:last-child{
+  #top-menu .wpml-ls-menu-item{
     right: -30px;
   }
-  #top-menu li:last-child:before{
+  #top-menu .wpml-ls-menu-item:before{
     font-size: 10px;
     right: 15px;
   }
@@ -1220,16 +1218,37 @@ div.owl-nav.arrow_size_medium .owl-next:before{
 
 /* ver 4 under 4-inch Mabile */
 @media (max-width:375px){
-  /* mo about setting */
-  #top-menu li:nth-child(4),
-  #top-menu li:nth-child(5),
-  #top-menu li:last-child{
-    bottom:4rem;
+  /* ========= header ========== */
+  #main-header { /* above main header margin size */
+    margin-top: 1rem;
   }
-  #top-menu li:nth-child(4) a,
-  #top-menu li:nth-child(5) a,
-  #top-menu li:last-child a{
-    font-size: 9px !important;
+  .et_header_style_centered #main-header { /* main header top bottom padding size */
+    padding: 20px 0;
+  }
+  #top-menu #menu-item-207052 { /* cafemoo menu item size */
+    width: 60px;
+  }
+  #top-menu #menu-item-207053 { /* stockist menu item bug fix */
+    position: inherit;
+  }
+  .et_header_style_centered #logo { /* demoo logo resized */
+    max-height: 25px;
+    margin-bottom: 0;
+  }
+  .et_header_style_centered #top-menu > li > a { /* main nav menu item size */
+    font-size: 10px;
+  }
+  /* ========= header end ========== */
+  #main-title{
+      font-size:14px;
+      left:-5%;
+      bottom: 19%;
+  }
+  /* mo about setting */
+  #top-menu #menu-item-207052,
+  #top-menu #menu-item-207053,
+  #top-menu .wpml-ls-menu-item{
+    bottom:4rem;
   }
   #about.about-ko p, #mo-about.mo-about-ko p{
     font-size: 0.6rem;
@@ -1270,27 +1289,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   #menu-collection-menu-ko li a{
     font-size: 15px;
   }
-  /* header */
-  #main-header{
-    margin-top:1rem;
-  }
-  .et_header_style_centered #main-header{
-    padding: 13px 0;
-  }
-  .et_header_style_centered #top-menu>li>a{
-    font-size: 11px;
-  }
-  .et_header_style_centered #logo{
-    max-height: 30px;
-    margin-bottom: 4px;
-    margin-top: 0;
-  }
-  #main-title{
-      font-size:14px;
-      left:-9.5%;
-      bottom: 19%;
-  }
-
   /*--- collection page edit ---*/
   #video-section, #collections-section{
     bottom:calc(49%);
@@ -1380,5 +1378,5 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   }
 }
 
-/* plugin eidt -> jsfilde check !
+/* plugin edit -> jsfilde check !
 slideBy = 4, tablet = width 1100, 갯수 2개로 보이게 */
