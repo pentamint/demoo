@@ -149,7 +149,7 @@ display:none !important;
   padding-right: 0;
 }
 #top-menu #menu-item-207052 a { /* cafemoo nav menu a */
-  color: transparent;
+  color: transparent !important;
   width: 100px;
 }
 #top-menu #menu-item-207052 a, #top-menu .wpml-ls-menu-item a{
