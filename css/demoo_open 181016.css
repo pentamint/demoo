@@ -22,9 +22,6 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-h1, h2, h3, h4, h5, h6, a {
-  color: #000;
-}
 /* =========================================================
    1. BASE END
    ========================================================= */
@@ -32,6 +29,7 @@ h1, h2, h3, h4, h5, h6, a {
 /* =========================================================
    2. LAYOUT
    ========================================================= */
+/* ========= header ========== */
 /* Header jump fix */
 #page-container {
   padding-top: 122px !important;
@@ -39,19 +37,28 @@ h1, h2, h3, h4, h5, h6, a {
 #main-header {
   top: 0 !important;
 }
+/* Header jump fix end */
+#top-menu li li{
+  padding: 0;
+  width: 100%;
+}
+#top-menu li li a{
+  width: 100%;
+  padding: 6px 0 6px 10px;
+  margin-left: 30px;
+}
+#top-menu #menu-item-207053 { /* main nav last menu item remove padding right */
+  padding-right: 0;
+}
 /* document 로드 될 때 block 튕김방지 */
 #collections-section, #stockist-section, #main_all_box{
   padding-top: 125px !important;
   border:0;
 }
-@media (max-width: 600px) {
-  .single .et_pb_section_first, .page .et_pb_section_first { /* post & page top padding */
-    padding-top: 110px !important;
-  }
-  .et_pb_gutters3 .et_pb_column_1_2, .et_pb_gutters3.et_pb_row .et_pb_column_1_2 {
-    width: 100% !important;
-  }
+.et_pb_section_first {
+
 }
+
 /* =========================================================
    2. LAYOUT END
    ========================================================= */
@@ -59,35 +66,108 @@ h1, h2, h3, h4, h5, h6, a {
 /* =========================================================
    3. MODULE
    ========================================================= */
-/* --- Divi Builder Modules --- */
-/* Tabs Module */
-.et_pb_tabs {
-  border: none;
+/* --- WPML --- */
+#top-menu #menu-item-207052, #top-menu .wpml-ls-menu-item{
+  position: absolute;
+  right: 0px;
+  bottom: 5rem;
 }
-.et_pb_tab {
-  padding: 0;
+.wpml-ls-item.wpml-ls-current-language.wpml-ls-menu-item > .sub-menu{
+  left: -10px;
+  border-top: none;
+  width: 50px;
 }
-ul.et_pb_tabs_controls {
-  background-color: transparent ;
+.wpml-ls-item.wpml-ls-current-language.wpml-ls-menu-item > .sub-menu li{
+  top: 1px;
+  left: -30px;
 }
-.et_pb_tabs_controls li.et_pb_tab_active {
+li#menu-item-wpml-ls-5-ko span.wpml-ls-display,
+li#menu-item-wpml-ls-5-ko ul li#menu-item-wpml-ls-5-en span.wpml-ls-display{
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+}
+li#menu-item-wpml-ls-5-en span.wpml-ls-display,
+li#menu-item-wpml-ls-5-en ul li#menu-item-wpml-ls-5-ko span.wpml-ls-display{
+  font-family: helvetica-neue;
+}
+/* --- /WPML --- */
+/* --- Siteorigin Page Builder --- */
+.so-widget-sow-button .ow-button-base a {
+  background: #000 !important;
+  border: 1px solid #000 !important;
+  border-radius: 0 !important;
+}
+.so-widget-sow-button .ow-button-base a:hover {
+  background: #ee0000 !important;
+  border-color: #ee0000 !important;
+}
+#gallery-1 img {
+  border: none !important;
+}
+/* --- /Siteorigin Page Builder --- */
+/* --- Tabs Widget for Page Builder --- */
+.demoo-tabs .tab-pane .widget-title {
+  margin: 10px 0 5px;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: underline;
+}
+.nav-tabs .nav-link.active {
   background-color: #000;
+  color: #fff;
+  border-color: #000 #000 transparent;
+  border-radius: 0;
 }
-.et_pb_tabs_controls li.et_pb_tab_active a {
-  color: #fff !important;
+.nav-tabs .nav-link.active:hover {
+  border-color: #000 #000 transparent !important;
 }
-.et_pb_tabs_controls li a {
-  color: #000 !important;
+.nav-tabs .nav-link:hover {
+  border-color: #000 #000 #fff;
+  border-radius: 0;
 }
-.et_pb_tab_content .et_pb_row {
-  width: 100%;
+li.nav-item.active {
+  background-color: #000;
+  border-color: #000 #000 transparent;
+  border-radius: 0;
 }
-/* /Tabs Module */
-/* Image Module */
-.et_pb_tab_content .et_pb_image {
-  margin-bottom: 2em !important;
+li.nav-item.active a {
+  color: #fff;
 }
-/* /Image Module */
+li.nav-item.active:hover, .nav-tabs .nav-link:hover {
+  border-color: #000 #000 transparent !important;
+}
+li.nav-item:hover {
+  border-color: #000 #000 #fff;
+  border-radius: 0;
+}
+.interview-row {
+  position: relative;
+}
+.interview-txt {
+  position: absolute;
+  font-family: 'Noto Sans KR', helvetica-neue, san-serif !important;
+  font-weight: normal;
+}
+.interview-txt-r {
+  top: 77%;
+  left: 51%;
+}
+.interview-txt-l {
+  top: 77%;
+  right: 52%;
+}
+@media (max-width:600px) {
+  .interview-row {
+    margin-bottom: 100px;
+  }
+  .interview-txt-r, .interview-txt-l {
+    top: unset;
+    left: unset;
+    right: unset;
+    font-size: 12px;
+  }
+}
+/* --- /Tabs Widget for Page Builder --- */
 /* --- Modal About Intro --- */
 @media (max-width: 767px) {
   .about-pc {
@@ -120,6 +200,7 @@ ul.et_pb_tabs_controls {
   line-height: 55px;
   font-family: helvetica-neue;
 }
+/* --- /Modal About Intro --- */
 /* --- Video Module --- */
 .videoContainer {
   position: relative;
@@ -139,31 +220,7 @@ iframe {
   width: 100%;
   height: 100%;
 }
-/* --- WPML --- */
-#top-menu #menu-item-207052, #top-menu .wpml-ls-menu-item{
-  position: absolute;
-  right: 0px;
-  bottom: 5rem;
-}
-.wpml-ls-item.wpml-ls-current-language.wpml-ls-menu-item > .sub-menu{
-  left: -10px;
-  border-top: none;
-  width: 50px;
-}
-.wpml-ls-item.wpml-ls-current-language.wpml-ls-menu-item > .sub-menu li{
-  top: 1px;
-  left: -30px;
-}
-li#menu-item-wpml-ls-5-ko span.wpml-ls-display,
-li#menu-item-wpml-ls-5-ko ul li#menu-item-wpml-ls-5-en span.wpml-ls-display{
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 600;
-}
-li#menu-item-wpml-ls-5-en span.wpml-ls-display,
-li#menu-item-wpml-ls-5-en ul li#menu-item-wpml-ls-5-ko span.wpml-ls-display{
-  font-family: helvetica-neue;
-}
-
+/* --- /Video Module --- */
 /* =========================================================
    3. MODULE END
    ========================================================= */
@@ -179,112 +236,24 @@ li#menu-item-wpml-ls-5-en ul li#menu-item-wpml-ls-5-ko span.wpml-ls-display{
 /* =========================================================
    5. THEME
    ========================================================= */
-/* --- Divi Reset --- */
-.et_header_style_centered #main-header div#et-top-navigation { /* Demoo custom */
-  display: block;
+h1, h2, h3, h4, h5, h6, a {
+  color: #000;
 }
-.et_overlay:before, .et_pb_bg_layout_light .et_pb_more_button, .et_pb_bg_layout_light .et_pb_newsletter_button, .et_pb_bg_layout_light .et_pb_promo_button, .et_pb_bg_layout_light.et_pb_module.et_pb_button, .et_pb_contact_submit, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active, .et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active, .et_pb_gallery .et_pb_gallery_pagination ul li a.active, .et_pb_member_social_links a:hover, .et_pb_pricing li a, .et_pb_pricing_table_button, .et_pb_sum, .woocommerce-page #content input.button:hover .et_pb_widget li a:hover {
-  color: #EF0000;  /* divi primary color reset */
+.krtxt {
+  font-family: 'Noto Sans KR', helvetica-neue, san-serif !important;
 }
 #left-area ul, .comment-content ul, .entry-content ul, body.et-pb-preview #main-content .container ul { /* divi list style removed */
   list-style-type: none;
 }
-/* --- /Divi Reset --- */
-
-/* --- Header Elements --- */
-#top-menu li li{
-  padding: 0;
-  width: 100%;
-}
-#top-menu li li a{
-  width: 100%;
-  padding: 6px 0 6px 10px;
-  margin-left: 30px;
-}
-#top-menu #menu-item-207053 { /* main nav last menu item remove padding right */
-  padding-right: 0;
-}
-.et_header_style_centered #logo{ /* 로고 마진 */
-margin-top:10px;
-}
-#et_mobile_nav_menu{ /* 모바일 메뉴 없애기 */
-display:none !important;
-}
-/* Main Menu Design */
-.et_header_style_centered #main-header div#et-top-navigation{
-  font-family: helvetica-neue;
-  font-weight: 500;
-}
-.et_header_style_centered #top-menu>li>a{
-  font-size: 16px;
-  line-height: 1.2rem;
-}
-/* /Main Menu Design */
-/* Tablet 이하 Submenu 보이기 */
-.et_header_style_centered nav#top-menu-nav{
-  display: inline-block;
-}
-#top-menu{
+.et_header_style_centered #main-header div#et-top-navigation {
   display: block;
 }
-#main-header{
-  z-index: 998;
-  margin-top: 10px;
+.et_pb_section {
+  background-color: transparent;
 }
-#page-container #main-header .container{
-  max-width: 1300px;
-}
-#top-menu li{
-  padding: 3px 22px 10px 0;
-}
-#top-menu #menu-item-207052{ /* cafemoo nav menu */
-  left: 0rem;
-  right: auto;
-  background-image: url(/pmdemoo/wp-content/uploads/2018/09/cafemoo_logo.svg);
-  background-repeat: no-repeat;
-  background-position: 0 7px;
-  padding-right: 0;
-}
-#top-menu #menu-item-207052 a { /* cafemoo nav menu a */
-  color: transparent !important;
-  width: 100px;
-}
-#top-menu #menu-item-207052 a, #top-menu .wpml-ls-menu-item a{
-  font-size: 15px;
-  font-weight: 100;
-}
-/* /Tablet 이하 Submenu 보이기 */
-/* --- /Header Elements --- */
-
-/* --- Page Content Elements --- */
-.krtxt { /* korean txt */
-  font-family: 'Noto Sans KR', helvetica-neue, san-serif !important;
-}
-.krtxt.content-title { /* korean title design */
-  font-size: 1.75em;
-  font-weight: 900;
-}
-.content-title { /* title design */
-  font-size: 2em;
-  line-height: 1.5em;
-  text-decoration: underline;
-  text-align: center;
-}
-.content-button { /* button design */
-  background: #000;
-  border-radius: 0;
-  color: #fff;
-  font-size: 1.5em;
-  padding: .5em 2em;
-}
-.content-button:hover { /* button hover design */
-  background-color: #EF0000 !important;
-  padding: .5em 2.3em .5em 1.5em !important;
-}
-/* About Us Page */
+/*--- About Page Setting ---*/
 #about-section{
   z-index: 1002;
-  background-color: transparent;
 }
 #about div {
   height: 1rem;
@@ -306,9 +275,8 @@ display:none !important;
 #menu-item-205417{
 	cursor: pointer;
 }
-/* /About Us Page */
-/* Collection Page */
-/* bottom menu *//
+/*--- /About Page Setting ---*/
+/* --- Collections Bottom Menu --- */
 #collections-menu .current-menu-item.current_page_item{
   border-bottom: 2px solid black;
 }
@@ -317,7 +285,8 @@ display:none !important;
   bottom:0;
   width:100%;
   padding: 30px 10px;
-  z-index: 1002;
+  background-color: #fff;
+  z-index: 1000;
 }
 #collections-menu div{
   width:100% !important;
@@ -339,45 +308,80 @@ display:none !important;
 #menu-collection-menu-ko li a{
   color:#000;
 }
-/* /bottom menu */
-/* /Collection Page */
-/* Interview Txt */
-.interview-txt {
-  position: absolute;
-  font-family: 'Noto Sans KR', helvetica-neue, san-serif !important;
-  font-weight: normal;
-}
-.interview-txt-r {
-  top: 77%;
-  left: 51%;
-}
-.interview-txt-l {
-  top: 77%;
-  right: 52%;
-}
+/* --- /Collections Bottom Menu --- */
 @media (max-width:600px) {
-  .interview-txt {
-    position: relative;
-  }
-  .interview-txt-r, .interview-txt-l {
-    top: unset;
-    left: unset;
-    right: unset;
-    font-size: 12px;
+  h1.entry-title.main_title {
+    font-size: 1.75em;
   }
 }
-/* /Interview Txt */
-/* --- /Page Content Elements --- */
+/* =========================================================
+   5. THEME END
+   ========================================================= */
 
-/*--- Footer Elements ---*/
+/* main menu setting */
+.et_header_style_centered #main-header div#et-top-navigation{
+  font-family: helvetica-neue;
+  font-weight: 500;
+}
+.et_header_style_centered #top-menu>li>a{
+  font-size: 16px;
+  line-height: 1.2rem;
+}
+/* /main menu setting */
+
+/* 로고 마진 */
+.et_header_style_centered #logo{
+margin-top:10px;
+}
+
+/* 모바일 메뉴 없애기 */
+#et_mobile_nav_menu{
+display:none !important;
+}
+
+/* tablet 이하 submenu 보이기 */
+.et_header_style_centered nav#top-menu-nav{
+  display: inline-block;
+}
+#top-menu{
+  display: block;
+}
+#main-header{
+  z-index: 998;
+  margin-top: 10px;
+}
+#page-container #main-header .container{
+  max-width: 1300px;
+}
+#top-menu li{
+  padding: 3px 22px 10px 0;
+}
+
+#top-menu #menu-item-207052{ /* cafemoo nav menu */
+  left: 0rem;
+  right: auto;
+  background-image: url(/pmdemoo/wp-content/uploads/2018/09/cafemoo_logo.svg);
+  background-repeat: no-repeat;
+  background-position: 0 7px;
+  padding-right: 0;
+}
+#top-menu #menu-item-207052 a { /* cafemoo nav menu a */
+  color: transparent !important;
+  width: 100px;
+}
+#top-menu #menu-item-207052 a, #top-menu .wpml-ls-menu-item a{
+  font-size: 15px;
+  font-weight: 100;
+}
+
+/* /tablet 이하 submenu 보이기 */
+/* ========= header end ========== */
+/*--- footer ---*/
 /* 기본 footer 없애기 */
 #main-footer{
 display:none;
 }
-/*--- /Footer Elements ---*/
-/* =========================================================
-   5. THEME END
-   ========================================================= */
+/*--- footer ---*/
 
 
 /*--- main page setting ---*/
@@ -501,6 +505,8 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   opacity: 0;
 }
 /* /img tag 를 div tag background 만들기 */
+
+
 
 /* on/off video-btn */
 #close-btn-section{

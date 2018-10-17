@@ -181,7 +181,7 @@ window.$ = jQuery;
     });
   }
 
-  // protect carousel photo jump
+  // collection section jump protect
 var owlStg = $('.owl-carousel');
 if( owlStg != null) {
   setTimeout(function(){
