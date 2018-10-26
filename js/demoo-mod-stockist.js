@@ -1,6 +1,6 @@
 ( function ( $ ) {
 
-  /* stockist setting */
+$(document).ready(function() {
   /* text fold */
     $('h5[class^="foldBtn"]').on('click', function(){
       var Btn = $("." + ($(this).attr("class")).replace('Btn',''));
@@ -39,5 +39,5 @@
         dispVal = "block";
       };
     });
-
+  });
 } )( jQuery );

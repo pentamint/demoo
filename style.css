@@ -48,9 +48,6 @@ h1, h2, h3, h4, h5, h6, a {
   .single .et_pb_section_first, .page .et_pb_section_first { /* post & page top padding */
     padding-top: 110px !important;
   }
-  .et_pb_gutters3 .et_pb_column_1_2, .et_pb_gutters3.et_pb_row .et_pb_column_1_2 {
-    width: 100% !important;
-  }
 }
 /* =========================================================
    2. LAYOUT END
@@ -88,6 +85,67 @@ ul.et_pb_tabs_controls {
   margin-bottom: 2em !important;
 }
 /* /Image Module */
+/* Slider Module */
+/* desktop */
+.interview-slider .et_pb_slide .et_pb_container {
+	height: auto !important;
+	min-height: 600px !important;
+}
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+	.interview-slider .et_pb_slide .et_pb_container {
+		height: auto !important;
+		min-height: 400px !important;
+	}
+}
+/* phone */
+@media only screen and (max-width: 767px) {
+	.interview-slider .et_pb_slide .et_pb_container {
+		height: auto !important;
+		min-height: 250px !important;
+	}
+}
+/* handle padding */
+.interview-slider .et_pb_slide {
+	padding-bottom: 0px !important;
+}
+.interview-slider div.et_pb_slide_description,
+.interview-slider .et_pb_slider_fullwidth_off div.et_pb_slide_description {
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+/* other elements */
+.interview-slider .et-pb-arrow-next, .et-pb-arrow-prev { /* arrow design */
+  font-size: 5em;
+  color: #000 !important;
+}
+.interview-slider .et-pb-arrow-next {
+  right: 0;
+}
+.interview-slider .et-pb-arrow-prev {
+  left: 0;
+}
+.interview-slider .et-pb-controllers a { /* control design */
+  background-color: #ccc;
+}
+.interview-slider .et-pb-controllers .et-pb-active-control { /* active control design */
+  background-color: #000;
+}
+.interview-slider .et_pb_slide { /* remove divi default background color #7EBEC5 */
+  background-color: transparent !important;
+  background-size: contain !important;
+}
+.interview-slider .et_pb_bg_layout_dark .et_pb_slide_content { /* content font color */
+  color: #000;
+  font-weight: 700;
+  background-color: rgba(255,255,255,.5);
+  padding: 1em;
+}
+.interview-slider .et_pb_bg_layout_dark .et_pb_slide_description {
+  text-shadow: none;
+}
+/* /Slider Module */
+/* --- /Divi Builder Modules --- */
 /* --- Modal About Intro --- */
 @media (max-width: 767px) {
   .about-pc {
@@ -120,6 +178,7 @@ ul.et_pb_tabs_controls {
   line-height: 55px;
   font-family: helvetica-neue;
 }
+/* --- /Modal About Intro --- */
 /* --- Video Module --- */
 .videoContainer {
   position: relative;
@@ -139,6 +198,7 @@ iframe {
   width: 100%;
   height: 100%;
 }
+/* --- /Video Module --- */
 /* --- WPML --- */
 #top-menu #menu-item-207052, #top-menu .wpml-ls-menu-item{
   position: absolute;
@@ -163,7 +223,7 @@ li#menu-item-wpml-ls-5-en span.wpml-ls-display,
 li#menu-item-wpml-ls-5-en ul li#menu-item-wpml-ls-5-ko span.wpml-ls-display{
   font-family: helvetica-neue;
 }
-
+/* --- /WPML --- */
 /* =========================================================
    3. MODULE END
    ========================================================= */
@@ -219,6 +279,14 @@ display:none !important;
   font-size: 16px;
   line-height: 1.2rem;
 }
+#menu-item-207392 a {
+  color: #EF0000 !important;
+}
+@media only screen and (min-width: 981px) {
+  .et-fixed-header #top-menu #menu-item-207392.current-menu-item>a, .et-fixed-header #top-menu #menu-item-207392>a {
+    color: #EF0000 !important;
+  }
+}
 /* /Main Menu Design */
 /* Tablet 이하 Submenu 보이기 */
 .et_header_style_centered nav#top-menu-nav{
@@ -269,6 +337,10 @@ display:none !important;
   line-height: 1.5em;
   text-decoration: underline;
   text-align: center;
+}
+.content-sub-title, .content-sub-title .krtxt { /* title sub design */
+  font-size: 1.2em;
+  line-height: 1.3em;
 }
 .content-button { /* button design */
   background: #000;
@@ -382,23 +454,23 @@ display:none;
 
 /*--- main page setting ---*/
 /* main image 튕김방지 */
-.entry-content ul{
+.page-id-204927 .entry-content ul{
   padding: 0 !important;
 }
-.metaslider .flexslider{
+.page-id-204927 .metaslider .flexslider{
   border: 0 !important;
 }
-.metaslider .slides img{
+.page-id-204927 .metaslider .slides img{
   width: 100% !important;
   display: block !important;
 }
 /* main image 크기, 간격 */
-.et_pb_gutters3 .et_pb_column_1_2,
-.et_pb_gutters3.et_pb_row .et_pb_column_1_2{
+.page-id-204927 .et_pb_column_1_2,
+.page-id-204927 .et_pb_row .et_pb_column_1_2 {
   width: calc(50% - 10px) !important;
 }
-.et_pb_gutters3 .et_pb_column,
-.et_pb_gutters3.et_pb_row .et_pb_column{
+.page-id-204927 .et_pb_column,
+.page-id-204927 .et_pb_row .et_pb_column {
   margin-right: 20px;
 }
 /* /main image 크기, 간격 */
