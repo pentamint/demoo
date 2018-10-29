@@ -36,19 +36,120 @@ h1, h2, h3, h4, h5, h6, a {
 #page-container {
   padding-top: 122px !important;
 }
-#main-header {
-  top: 0 !important;
-}
-/* document 로드 될 때 block 튕김방지 */
-#collections-section, #stockist-section, #main_all_box{
-  padding-top: 125px !important;
+#collections-section, #stockist-section, #main_all_box{ /* document 로드 될 때 block 튕김방지 */
+  padding-top: 122px !important;
   border:0;
 }
+/* /Header jump fix */
+#main-header {
+  margin-top: 10px;
+  top: 0 !important;
+  z-index: 998;
+}
+#page-container #main-header .container {
+  max-width: 1300px;
+}
+/* logo area */
+.et_header_style_centered #logo{ /* 로고 마진 */
+margin-top: 10px;
+}
+.et_header_style_centered header#main-header .logo_container{ /* container height */
+  height: 80px !important;
+}
+/* /Logo area */
+.et_header_style_centered #main-header div#et-top-navigation {
+  position: unset;
+}
+/* Nav area */
+#top-menu li{
+  padding: 3px 22px 10px 0;
+}
+#top-menu li li{
+  padding: 0;
+  width: 100%;
+}
+#top-menu li li a{
+  width: 100%;
+  padding: 6px 0 6px 10px;
+  margin-left: 30px;
+}
+#top-menu #menu-item-207053 {
+  padding-right: 0; /* stockist remove padding right */
+}
+#top-menu #menu-item-207052 {
+  padding-right: 0;
+  width: 100px;
+  left: 30px;
+}
+/* /Nav area */
+@media (max-width: 1100px) and (min-width: 601px){
+  /* hdeader 간격조절 */
+  .et_header_style_centered #main-header{
+    padding:0;
+  }
+  #main-header .container{
+    width: 95%;
+  }
+  .et_header_style_centered #logo{
+    max-height: 40px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+}
 @media (max-width: 600px) {
+  #main-header{
+    margin-top: 0;
+  }
+  .et_header_style_centered header#main-header .logo_container {
+    height: 60px !important;
+  }
+  #top-menu li {
+    padding: 3px 15px 10px 0;
+  }
   .single .et_pb_section_first, .page .et_pb_section_first { /* post & page top padding */
     padding-top: 110px !important;
   }
 }
+@media (max-width: 375px) {
+  .et_header_style_centered #main-header {
+    padding: 10px 0;
+  }
+  .et_header_style_centered header#main-header .logo_container {
+    height: 55px !important;
+  }
+  #top-menu li {
+    padding: 3px 10px 10px 0;
+  }
+}
+/* Collection, video section */
+/* collections-section(photo) */
+#collections-section{
+  position: absolute;
+  bottom: calc(50% - 1.8rem);
+  transform: translateY(50%);
+  padding: 0 !important;
+  z-index: 1000;
+}
+#collections-section > div{
+  width: calc(100vw);
+  max-width: calc(100vw);
+  height:calc(100vh - 20rem);
+  max-height: 1025px;
+}
+#collections-section div{
+  /* margin: 0 auto; */
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  #collections-section, #video-section{
+    bottom: calc(50% + 3em) !important;
+  }
+}
+@media (max-width: 600px) {
+  #collections-section, #video-section{
+    bottom: calc(50% + 3em) !important;
+}
+}
+/* /Collection, video section */
 /* =========================================================
    2. LAYOUT END
    ========================================================= */
@@ -202,8 +303,12 @@ iframe {
 /* --- WPML --- */
 #top-menu #menu-item-207052, #top-menu .wpml-ls-menu-item{
   position: absolute;
-  right: 0px;
-  bottom: 5rem;
+  top: 0;
+  right: 30px;
+}
+#top-menu #menu-item-207052 a, #top-menu .wpml-ls-menu-item a{
+  font-size: 15px;
+  font-weight: 100;
 }
 .wpml-ls-item.wpml-ls-current-language.wpml-ls-menu-item > .sub-menu{
   left: -10px;
@@ -252,24 +357,6 @@ li#menu-item-wpml-ls-5-en ul li#menu-item-wpml-ls-5-ko span.wpml-ls-display{
 /* --- /Divi Reset --- */
 
 /* --- Header Elements --- */
-#top-menu li li{
-  padding: 0;
-  width: 100%;
-}
-#top-menu li li a{
-  width: 100%;
-  padding: 6px 0 6px 10px;
-  margin-left: 30px;
-}
-#top-menu #menu-item-207053 { /* main nav last menu item remove padding right */
-  padding-right: 0;
-}
-.et_header_style_centered #logo{ /* 로고 마진 */
-margin-top:10px;
-}
-#et_mobile_nav_menu{ /* 모바일 메뉴 없애기 */
-display:none !important;
-}
 /* Main Menu Design */
 .et_header_style_centered #main-header div#et-top-navigation{
   font-family: helvetica-neue;
@@ -279,6 +366,16 @@ display:none !important;
   font-size: 16px;
   line-height: 1.2rem;
 }
+#top-menu{
+  display: block;
+}
+#et_mobile_nav_menu{ /* 모바일 메뉴 없애기 */
+display:none !important;
+}
+.et_header_style_centered nav#top-menu-nav{ /* tablet 이하 submenu 보이기 */
+  display: inline-block;
+}
+/* project menu */
 #menu-item-207392 a {
   color: #EF0000 !important;
 }
@@ -287,41 +384,18 @@ display:none !important;
     color: #EF0000 !important;
   }
 }
-/* /Main Menu Design */
-/* Tablet 이하 Submenu 보이기 */
-.et_header_style_centered nav#top-menu-nav{
-  display: inline-block;
-}
-#top-menu{
-  display: block;
-}
-#main-header{
-  z-index: 998;
-  margin-top: 10px;
-}
-#page-container #main-header .container{
-  max-width: 1300px;
-}
-#top-menu li{
-  padding: 3px 22px 10px 0;
-}
-#top-menu #menu-item-207052{ /* cafemoo nav menu */
-  left: 0rem;
-  right: auto;
+/* /project menu */
+/* cafemoo menu */
+#top-menu #menu-item-207052{
   background-image: url(/pmdemoo/wp-content/uploads/2018/09/cafemoo_logo.svg);
   background-repeat: no-repeat;
   background-position: 0 7px;
-  padding-right: 0;
 }
-#top-menu #menu-item-207052 a { /* cafemoo nav menu a */
+#top-menu #menu-item-207052 a {
   color: transparent !important;
-  width: 100px;
 }
-#top-menu #menu-item-207052 a, #top-menu .wpml-ls-menu-item a{
-  font-size: 15px;
-  font-weight: 100;
-}
-/* /Tablet 이하 Submenu 보이기 */
+/* /cafemoo menu */
+/* /Main Menu Design */
 /* --- /Header Elements --- */
 
 /* --- Page Content Elements --- */
@@ -450,7 +524,6 @@ display:none;
 /* =========================================================
    5. THEME END
    ========================================================= */
-
 
 /*--- main page setting ---*/
 /* main image 튕김방지 */
@@ -641,20 +714,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
 }
 /* video-section setting */
 /*--- /collection page setting ---*/
-
-/* collections-section(photo) */
-#collections-section{
-  z-index: 1000;
-}
-#collections-section > div{
-  width: calc(100vw);
-  max-width: calc(100vw);
-  height:calc(100vh - 20rem);
-  max-height: 1025px;
-}
-#collections-section div{
-  /* margin: 0 auto; */
-}
 .et_pb_gutters3 .et_pb_column_4_4 .et_pb_module,
 .et_pb_gutters3.et_pb_row .et_pb_column_4_4 .et_pb_module{
   margin-bottom: 0;
@@ -674,12 +733,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
 .owl-prev {
   left:0 !important;
   transform: translateY(-50%);
-}
-#collections-section{
-  position: absolute;
-  bottom: calc(50% - 1.8rem);
-  transform: translateY(50%);
-  padding: 0 !important;
 }
 .owl-carousel .owl-item img{
   display: block;
@@ -768,7 +821,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   z-index: -1;
   transition-duration: 0.5s;
 }
-
 .lightbox-module{
   position: fixed;
   background: rgba(0, 0, 0, 0.4);
@@ -858,7 +910,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   background-size: cover;
 }
 /*--- /contact page setting ---*/
-
 
 /* global cafe Moo page */
 #top-full-img{
@@ -1011,21 +1062,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   #about.about-en div, #mo-about.mo-about-en div{
     height: 0.8rem;
   }
-  /* hdeader 간격조절 */
-  #main-header .container{
-    width: 95%;
-  }
-  .et_header_style_centered #main-header{
-    padding:0;
-  }
-  .et_header_style_centered #logo{
-    max-height: 40px;
-    margin-bottom: 0px;
-    margin-top: 10px;
-  }
-  .et_header_style_centered header#main-header .logo_container{
-    height: 80px !important;
-  }
 /* main page edit */
 #main-title{
   font-size: 30px;
@@ -1131,9 +1167,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
     max-height: 620px;
     min-height: 300px;
   }
-  #collections-section, #video-section{
-    bottom: calc(50% - 10px);
-  }
   #video-section>div{
     height: auto;
   }
@@ -1171,11 +1204,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   .nav li ul{
     padding: 15px 0;
   }
-
-  .et_header_style_centered header#main-header.et-fixed-header .logo_container{
-    height: auto;
-  }
-
   #about.about-ko p, #mo-about.mo-about-ko p{
     font-size: 0.8rem;
   }
@@ -1221,9 +1249,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   #et-top-navigation{
     margin-top:5px;
   }
-  #main-header{
-    margin-top: 1rem;
-  }
   #menu-collection-menu li,
   #menu-collection-menu-ko li{
     font-size:1.4rem;
@@ -1251,10 +1276,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
   }
 
   /*--- collection page eidt ---*/
-  #collections-section,
-  #video-section{
-    bottom: calc(50% - 0.8rem);
-  }
   #close-btn-section{
     bottom: 49%;
   }
@@ -1422,12 +1443,6 @@ div.owl-nav.arrow_size_medium .owl-next:before{
 /* ver 4 under 4-inch Mabile */
 @media (max-width:375px){
   /* ========= header ========== */
-  #main-header { /* above main header margin size */
-    margin-top: 1rem;
-  }
-  .et_header_style_centered #main-header { /* main header top bottom padding size */
-    padding: 20px 0;
-  }
   #top-menu #menu-item-207052 { /* cafemoo menu item size */
     width: 60px;
   }
