@@ -959,7 +959,12 @@
   }
   /*--- /stockist page setting ---*/
   
-  /*--- contact page setting ---*/
+  /*--- contact page setting ---*/ page-id-205422
+  .page-id-205761 #contact-section .et_pb_slider .et_pb_slide,
+  .page-id-205761 #contact-section .et_pb_section, .page-id-205422 #contact-section .et_pb_slider .et_pb_slide,
+  .page-id-205422 #contact-section .et_pb_section {
+    background-position: top;
+  }
   #contact-ko p.kofont{
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 600;
